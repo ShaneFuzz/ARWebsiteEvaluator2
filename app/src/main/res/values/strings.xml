@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">AR Website Evaluator</string>
+
+    <!-- Strings related to Sign in and Sig up -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_name">Name (Name cannot be changed)</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_signup_password">Password (At least 8 characters)</string>
+    <string name="prompt_phone">Phone (Optional)</string>
+    <string name="prompt_signup">Sign Up</string>
+    <string name="action_sign_in">SIGN IN</string>
+    <string name="action_sign_up">SIGN UP</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_up_short">Sign up</string>
+    <string name="SignInText">Don\'t have an account yet?</string>
+
+    <string name="AccountAlready">Already have an account?</string>
+    <string name="SignUpLink">Sign up.</string>
+    <string name="SignInLink">Sign in.</string>
+
+    <!-- Strings related to Styles -->
+    <string name="font_family">Tahoma</string>
+
+
+</resources>
