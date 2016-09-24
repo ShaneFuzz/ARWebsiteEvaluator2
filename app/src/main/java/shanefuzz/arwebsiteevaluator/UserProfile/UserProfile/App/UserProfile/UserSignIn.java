@@ -1,4 +1,4 @@
-package shanefuzz.arwebsiteevaluator;
+package shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.UserProfile;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -7,9 +7,9 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -22,23 +22,39 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+import shanefuzz.arwebsiteevaluator.R;
+import shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.TextEvaluation.VuforiaSamples.ui.ActivityList.ActivityLauncher;
+
 public class UserSignIn extends AppCompatActivity {
 
 
 
         private static final String TAG = "SignInActivity";
+    /**
+     * Generate 6 character random password
+     */
+    private static final Random random = new Random();
+    private static final String CHARS = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ234567890!@#$";
         public static UserProfile id;
-
         // UI references.
         private AutoCompleteTextView mEmailView;
         private EditText mPasswordView;
         private TextView mRecovery;
-
         private ConnectivityManager mConMan = null;
         private NetworkInfo mInfo = null;
-
         private DatabaseHandler_user mDatabaseHandler;
+    /**
+     * press back key within 3 seconds for the second time to close the app
+     */
+    private Boolean exit = false;
 
+    public static String getToken() {
+        StringBuilder token = new StringBuilder(8);
+        for (int i = 0; i < 8; i++) {
+            token.append(CHARS.charAt(random.nextInt(CHARS.length())));
+        }
+        return token.toString();
+    }
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -95,9 +111,6 @@ public class UserSignIn extends AppCompatActivity {
 
         }
 
-
-
-
         /**
          * Attempts to sign in.
          * If there are form errors (invalid fields, missing fields, etc.), the
@@ -129,7 +142,6 @@ public class UserSignIn extends AppCompatActivity {
         return true;
 
     }
-
 
     /**
      * Send an email with 8 characters new random password to user's email address.
@@ -170,7 +182,6 @@ public class UserSignIn extends AppCompatActivity {
 
     }
 
-
     /**
      * Go to SignUpActivity page
      */
@@ -181,7 +192,6 @@ public class UserSignIn extends AppCompatActivity {
         finish();
 
     }
-
 
     /**
      * Return user object from the database
@@ -203,13 +213,13 @@ public class UserSignIn extends AppCompatActivity {
         //startActivity(intent);
         //SignInActivity.this.finish();
 
-        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+        //Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+        Intent intent = new Intent(this, ActivityLauncher.class);
         startActivity(intent);
 
 
 
     }
-
 
     /**
      * Empty field validation
@@ -218,26 +228,6 @@ public class UserSignIn extends AppCompatActivity {
 
         return field.isEmpty();
     }
-
-    /**
-     * Generate 6 character random password
-     */
-    private static final Random random = new Random();
-    private static final String CHARS = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ234567890!@#$";
-
-    public static String getToken() {
-        StringBuilder token = new StringBuilder(8);
-        for (int i = 0; i < 8; i++) {
-            token.append(CHARS.charAt(random.nextInt(CHARS.length())));
-        }
-        return token.toString();
-    }
-
-
-    /**
-     * press back key within 3 seconds for the second time to close the app
-     */
-    private Boolean exit = false;
 
     @Override
     public void onBackPressed() {

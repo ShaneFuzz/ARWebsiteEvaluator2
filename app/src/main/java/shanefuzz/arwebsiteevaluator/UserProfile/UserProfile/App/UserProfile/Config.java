@@ -1,4 +1,4 @@
-package shanefuzz.arwebsiteevaluator;
+package shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.UserProfile;
 
 /**
  * Configuration settings for sending an email(senders email,password)

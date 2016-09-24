@@ -1,4 +1,4 @@
-package shanefuzz.arwebsiteevaluator;
+package shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.UserProfile;
 
 import android.app.ProgressDialog;
 import android.content.Context;
