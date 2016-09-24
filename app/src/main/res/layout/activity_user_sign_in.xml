@@ -17,16 +17,28 @@
 
 
     <TextView
+        android:id="@+id/text_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/text_heading"
-        android:textColor="#f00000"
-        android:text="Evaluate your website"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:clickable="true"
-        android:layout_marginTop="40dp"
-        android:textStyle="bold"
+        android:text="Evaluate your website"
+        android:textColor="#f00000"
         android:textSize="20dp"
-        android:layout_gravity="center_horizontal" />
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:text="(Shane Production)"
+        android:textColor="#1a074b"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
 
     <android.support.design.widget.TextInputLayout
@@ -39,15 +51,15 @@
             android:id="@+id/text_signin_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@string/font_family"
             android:hint="@string/prompt_email"
-            android:textSize="20dp"
-            android:textColor="#fdfdfd"
-            android:inputType="textEmailAddress"
             android:imeActionId="@+id/next"
             android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:fontFamily="@string/font_family"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColor="#211f1f"
+            android:textSize="20dp" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -60,17 +72,17 @@
             android:id="@+id/text_signin_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@string/font_family"
             android:hint="@string/prompt_password"
             android:imeActionId="@+id/login"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
-            android:textColor="#fdfdfd"
             android:maxLines="1"
-            android:layout_marginTop="7dp"
-            android:fontFamily="@string/font_family"
-            android:textSize="20dp"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColor="#232020"
+            android:textSize="20dp" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -79,11 +91,11 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="184dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:indeterminate="true"
-        android:visibility="gone"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.16" />
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.16"
+        android:indeterminate="true"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/email_sign_in_button"
@@ -91,42 +103,42 @@
         android:layout_width="254dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="@string/action_sign_in"
-        android:background="#fa2921"
-        android:textColor="#151414"
         android:height="60dp"
+        android:background="#fa2921"
+        android:text="@string/action_sign_in"
+        android:textColor="#151414"
         android:textSize="25dp"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/SignInText"
-        android:textColor="#060745"
-        android:id="@+id/textView" />
+        android:textColor="#032109"
+        android:textStyle="italic" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/text_sign_up"
-        android:textColor="#151414"
-        android:text="@string/SignUpLink"
-        android:textStyle="bold"
-        android:clickable="true"
-        android:onClick="goToSignUpPage" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/text_recovery"
-        android:textColor="#f00000"
-        android:text="Don't remember your password?"
         android:clickable="true"
         android:onClick="goToSignUpPage"
+        android:text="@string/SignUpLink"
+        android:textColor="#742206"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_recovery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
-        android:textStyle=""
+        android:clickable="true"
+        android:text="Don't remember your password?"
+        android:textColor="#e10a0a"
         android:textSize="17dp"
-        android:layout_gravity="center_horizontal" />
+        android:textStyle="" />
 
 </LinearLayout>

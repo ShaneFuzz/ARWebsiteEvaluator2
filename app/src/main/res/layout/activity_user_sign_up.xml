@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     android:weightSum="1"
     tools:context="shanefuzz.arwebsiteevaluator.UserSignUp">
 
@@ -28,80 +28,80 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" /-->
 
-    <!--android.support.design.widget.TextInputLayout
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/TextLabel"
-        android:id="@+id/editText"
         android:layout_above="@+id/view3"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:theme="@style/TextLabel">
 
         <EditText
             android:id="@+id/text_signup_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_name"
-            android:maxLines="1"
-            android:textColor="#fdfdfd"
-            android:textSize="20sp"
-            android:singleLine="true"
-            android:fontFamily="@string/font_family"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp" />
+            android:layout_marginTop="100dp"
+            android:fontFamily="@string/font_family"
+            android:hint="@string/prompt_name"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#181717"
+            android:textSize="20sp" />
 
-    </android.support.design.widget.TextInputLayout-->
+    </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/TextLabel"
         android:layout_above="@+id/view2"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/view3">
+        android:layout_alignParentRight="true"
+        android:theme="@style/TextLabel">
 
         <EditText
             android:id="@+id/text_signup_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/text_signup_name"
+            android:layout_alignStart="@+id/text_signup_name"
+            android:layout_below="@+id/text_signup_name"
+            android:fontFamily="@string/font_family"
             android:hint="@string/prompt_email"
-            android:textColor="#fdfdfd"
-            android:textSize="20dp"
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:singleLine="true"
-            android:fontFamily="@string/font_family"
-            android:layout_below="@+id/text_signup_name"
-            android:layout_alignLeft="@+id/text_signup_name"
-            android:layout_alignStart="@+id/text_signup_name" />
+            android:textColor="#302d2d"
+            android:textSize="20dp" />
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/TextLabel"
-        android:id="@+id/view2"
-        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:theme="@style/TextLabel">
 
         <EditText
             android:id="@+id/text_signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/text_signup_email"
+            android:fontFamily="@string/font_family"
             android:hint="@string/prompt_signup_password"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textColor="#fdfdfd"
-            android:textSize="20dp"
             android:singleLine="true"
-            android:fontFamily="@string/font_family"
-            android:layout_below="@+id/text_signup_email"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:textColor="#1e1d1d"
+            android:textSize="20dp" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -140,46 +140,46 @@
         style="?android:textAppearanceSmall"
         android:layout_width="191dp"
         android:layout_height="wrap_content"
-        android:text="@string/action_sign_up"
-        android:background="#ed1212"
-        android:textColor="#121111"
-        android:height="60dp"
-        android:textSize="25dp"
-        android:textStyle="bold"
+        android:layout_alignEnd="@+id/text_signin"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignRight="@+id/text_signin"
+        android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/view2"
         android:layout_marginTop="45dp"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignRight="@+id/text_signin"
-        android:layout_alignEnd="@+id/text_signin" />
+        android:height="60dp"
+        android:background="#ed1212"
+        android:text="@string/action_sign_up"
+        android:textColor="#121111"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/text_signin"
-        android:textColor="#151414"
-        android:text="@string/SignInLink"
-        android:clickable="true"
-        android:textStyle="bold"
-        android:onClick="goToSignInActivity"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="4dp"
-        android:layout_below="@+id/email_sign_up_button"
-        android:layout_toRightOf="@+id/textView" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/AccountAlready"
-        android:textColor="#200b3e"
-        android:id="@+id/textView"
         android:layout_below="@+id/email_sign_up_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@+id/textView"
+        android:clickable="true"
+        android:onClick="goToSignInActivity"
+        android:text="@string/SignInLink"
+        android:textColor="#151414"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="40dp"
+        android:layout_below="@+id/email_sign_up_button"
         android:layout_marginLeft="62dp"
-        android:layout_marginStart="62dp" />
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/AccountAlready"
+        android:textColor="#200b3e" />
 
 
 </RelativeLayout>
