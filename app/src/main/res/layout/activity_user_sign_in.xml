@@ -27,7 +27,7 @@
         android:text="Evaluate your website"
         android:textColor="#1b1a1a"
         android:textSize="27dp"
-        android:textStyle="italic" />
+        android:textStyle="bold" />
 
 
     <android.support.design.widget.TextInputLayout
