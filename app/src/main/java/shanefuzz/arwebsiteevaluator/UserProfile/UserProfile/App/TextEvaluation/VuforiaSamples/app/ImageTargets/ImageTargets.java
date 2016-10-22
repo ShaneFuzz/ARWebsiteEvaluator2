@@ -55,7 +55,6 @@ import shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.TextEvaluation.V
 import shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.TextEvaluation.VuforiaSamples.ui.SampleAppMenu.SampleAppMenuGroup;
 import shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.TextEvaluation.VuforiaSamples.ui.SampleAppMenu.SampleAppMenuInterface;
 
-
 public class ImageTargets extends Activity implements SampleApplicationControl,
         SampleAppMenuInterface
 {
@@ -543,8 +542,11 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
         
         Tracker objectTracker = TrackerManager.getInstance().getTracker(
             ObjectTracker.getClassType());
-        if (objectTracker != null)
+        if (objectTracker != null) {
+            //detect simultaneous target
+            Vuforia.setHint (com.vuforia.HINT.HINT_MAX_SIMULTANEOUS_IMAGE_TARGETS, 5);
             objectTracker.start();
+        }
         
         return result;
     }

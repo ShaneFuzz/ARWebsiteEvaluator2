@@ -37,6 +37,7 @@ import shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.TextEvaluation.S
 import shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.TextEvaluation.SampleApplication.utils.SampleUtils;
 import shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.TextEvaluation.SampleApplication.utils.Teapot;
 import shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.TextEvaluation.SampleApplication.utils.Texture;
+import shanefuzz.arwebsiteevaluator.UserProfile.UserProfile.App.TextEvaluation.SampleApplication.utils.TextPlane;
 
 
 // The renderer class for the ImageTargets sample. 
@@ -57,7 +58,8 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer, SampleAppRen
     private int texSampler2DHandle;
     
     private Teapot mTeapot;
-    
+    private TextPlane mTextPlane;
+
     private float kBuildingScale = 12.0f;
     private SampleApplication3DModel mBuildingsModel;
 
@@ -158,6 +160,7 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer, SampleAppRen
 
         if(!mModelsLoaded) {
             mTeapot = new Teapot();
+            mTextPlane =new TextPlane();
 
             try {
                 mBuildingsModel = new SampleApplication3DModel();
@@ -239,9 +242,9 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer, SampleAppRen
 
             if (!mActivity.isExtendedTrackingActive()) {
                 GLES20.glVertexAttribPointer(vertexHandle, 3, GLES20.GL_FLOAT,
-                        false, 0, mTeapot.getVertices());
+                        false, 0, mTextPlane.getVertices());
                 GLES20.glVertexAttribPointer(textureCoordHandle, 2,
-                        GLES20.GL_FLOAT, false, 0, mTeapot.getTexCoords());
+                        GLES20.GL_FLOAT, false, 0, mTextPlane.getTexCoords());
 
                 GLES20.glEnableVertexAttribArray(vertexHandle);
                 GLES20.glEnableVertexAttribArray(textureCoordHandle);
@@ -258,8 +261,8 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer, SampleAppRen
 
                 // finally draw the teapot
                 GLES20.glDrawElements(GLES20.GL_TRIANGLES,
-                        mTeapot.getNumObjectIndex(), GLES20.GL_UNSIGNED_SHORT,
-                        mTeapot.getIndices());
+                        mTextPlane.getNumObjectIndex(), GLES20.GL_UNSIGNED_SHORT,
+                        mTextPlane.getIndices());
 
                 // disable the enabled arrays
                 GLES20.glDisableVertexAttribArray(vertexHandle);
