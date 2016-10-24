@@ -61,7 +61,7 @@ public class TextPlane extends MeshObject
 
     @Override
     public int getNumObjectVertex() {
-        return planeVertices.length / 3;
+        return planeVertices.length;
     }
 
     @Override
